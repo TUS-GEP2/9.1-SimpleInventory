@@ -8,11 +8,18 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     [SerializeField]
-    private TMP_Text blueDiamond;
+    private TMP_Text blueDiamondTMP;
     private int blueDiamoundsCollected;
 
     [SerializeField]
+    private TMP_Text yellowDiamondTMP;
+    private int yellowDiamondsCollected;
+
+    [SerializeField]
     private Animator blueDiamoundAnimator;
+
+    [SerializeField]
+    private Animator yellowDiamondAnimator;
 
     void Awake()
     {
@@ -24,15 +31,23 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        blueDiamond.text = blueDiamoundsCollected.ToString();
+        blueDiamondTMP.text = blueDiamoundsCollected.ToString();
     }
 
     public void BlueDiamondCollected()
     {
         blueDiamoundsCollected++;
-        blueDiamond.text = blueDiamoundsCollected.ToString();
+        blueDiamondTMP.text = blueDiamoundsCollected.ToString();
 
         blueDiamoundAnimator.SetTrigger("Pop");
+    }
+
+    public void YellowDiamondCollected()
+    {
+        yellowDiamondsCollected++;
+        yellowDiamondTMP.text = yellowDiamondsCollected.ToString();
+
+        yellowDiamondAnimator.SetTrigger("Pop");
     }
 
 

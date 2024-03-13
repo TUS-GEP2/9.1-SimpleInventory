@@ -22,5 +22,9 @@ public class DaimondCollector : MonoBehaviour
         {
             LevelManager.instance.BlueDiamondCollected();
         }
+        else if (collision.tag == "YellowDiamond")
+        {
+            LevelManager.instance.YellowDiamondCollected();
+        }
     }
 }
